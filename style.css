@@ -20,12 +20,12 @@
 body{
     margin: 0;
     font-family: Arial, sans-sarif;
-    background-color: #dff6ff;
+    background-color: #f4ecc8;
     color: #16425b;
 }
 
 header{
-    background-color: #0077b6;
+    background-color: #3392c2;
     color: white;
     text-align: center;
     padding-top: 20px;
@@ -40,7 +40,7 @@ header{
     display: flex;
     justify-content: center;
     gap: 0;
-    background-color: #005477;
+    background-color: #005377;
     padding: 0;
 }
 
@@ -65,7 +65,7 @@ section {
     max-width: 900px;
     margin: 30px auto;
     padding: 25px;
-    background-color: white;
+    background-color: rgb(251, 252, 233);
     border-radius: 15px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
