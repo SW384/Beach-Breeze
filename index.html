@@ -12,6 +12,7 @@
                 <button class="top-link" onclick="showPage('home')">Home</button>
                 <button class="top-link" onclick="showPage('packing')">Packing List</button>
                 <button class="top-link" onclick="showPage('schedule')">Schedule</button>
+                <button class="top-link" onclick="showPage('game')">Mini Game</button>
             </div>
 
             <img src="header.jpg" class="header-image">
@@ -46,6 +47,17 @@
                 <input type="datetime-local" id="dateInput">
                 <button id="addEventButton">Add Event</button>
                 <ul id="scheduleList"></ul>
+            </section>
+
+            <section id="game">
+                <h2>Clean the Beach 🏖️</h2>
+                <p>Help keep the beach beautiful by picking up trash!</p>
+
+                <div class="beach-game">
+                    <div class="game-title">🧹 Clean the Beach!</div>
+                </div>
+
+                <p>Trash Collected: <span id="score">0</span></p>
             </section>
         </main>
         <script src="script.js"></script>
