@@ -209,10 +209,15 @@ li {
         -2px 0 #ff2bd6;
 }
 
-#timerButton {
-    padding: 10px 14px;
+.timer-options {
+    display: flex;
+    gap: 8px;
+}
+
+.time-option {
+    padding: 10px 12px;
     font-family: 'Press Start 2P', cursive;
-    font-size: 10px;
+    font-size: 9px;
     color: #111111;
     background: white;
     border: 2px solid #00ffff;
@@ -220,19 +225,11 @@ li {
         3px 3px 0 #ff2bd6,
         0 0 6px #00ffff;
     cursor: pointer;
-    text-shadow: 1px 0 #ff2bd6;
 }
 
-#timerButton:hover {
+.time-option:hover {
     background: #00ffff;
     color: #111111;
-}
-
-#timer {
-    display: none;
-    margin: 10px 0;
-    text-align: right;
-    font-family: 'Press Start 2P', cursive;
 }
 
 #loseMessage {

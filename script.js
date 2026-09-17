@@ -6,6 +6,7 @@ const dateInput = document.getElementById("dateInput");
 const addEventButton = document.getElementById("addEventButton");
 const scheduleList = document.getElementById("scheduleList");
 const trash = document.querySelectorAll(".trash");
+const timeOptions = document.querySelectorAll(".time-option");
 
 function addItem() {
     const itemText = itemInput.value;
@@ -79,6 +80,7 @@ function showPage(pageName) {
 let score = 0;
 let timer;
 let timeLeft = 45;
+document.getElementById("timer").style.display = "none";
 
 function randomizeTrash() {
     trash.forEach(function(item) {
@@ -101,53 +103,53 @@ trash.forEach(function(item) {
         }
     });
 });
+
 randomizeTrash();
 
 document.getElementById("playAgainButton").addEventListener("click", function() {
-    score = 0
+    clearInterval(timer);
+    score = 0;
     document.getElementById("score").textContent = "0";
     document.getElementById("winMessage").style.display = "none";
+    document.getElementById("timer").style.display = "none";
     randomizeTrash();
 });
 
-document.getElementById("timerButton").addEventListener("click", function() {
-    document.getElementById("timer").style.display = "block";
-    clearInterval(timer);
-    timeLeft = 45;
-    document.getElementById("timer").textContent = "00:45";
-    timer = setInterval(function() {
-        timeLeft--;
-        let minutes = Math.floor(timeLeft / 60);
-        let seconds = timeLeft % 60;
+timeOptions.forEach(function(button) {
+    button.addEventListener("click", function() {
+        clearInterval(timer);
+        timeLeft = Number(button.dataset.time);
+        document.getElementById("timer").style.display = "block";
         document.getElementById("timer").textContent =
-            String(minutes).padStart(2, "0") + ":" +
-            String(seconds).padStart(2, "0");
-        if (timeLeft <= 0) {
-            clearInterval(timer);
-            trash.forEach(function(item) {
-                item.style.visibility = "hidden";
-            });
-            document.getElementById("loseMessage").style.display = "block";
-        }
-    }, 1000);
+            "00:" + String(timeLeft).padStart(2, "0");
+        timer = setInterval(function() {
+            timeLeft--;
+            document.getElementById("timer").textContent =
+                "00:" + String(timeLeft).padStart(2, "0");
+            if (timeLeft <= 0) {
+                clearInterval(timer);
+                trash.forEach(function(item) {
+                    item.style.visibility = "hidden";
+                });
+                document.getElementById("loseMessage").style.display = "block";
+            }
+        }, 1000);
+    });
 });
 
 document.getElementById("tryAgainButton").addEventListener("click", function() {
+    clearInterval(timer);
     score = 0;
     document.getElementById("score").textContent = "0";
     document.getElementById("loseMessage").style.display = "none";
-    document.getElementById("timer").style.display = "block";
-    timeLeft = 45;
-    document.getElementById("timer").textContent = "00:45";
     randomizeTrash();
-    clearInterval(timer);
+    timeLeft = 45;
+    document.getElementById("timer").style.display = "block";
+    document.getElementById("timer").textContent = "00:45";
     timer = setInterval(function() {
         timeLeft--;
-        let minutes = Math.floor(timeLeft / 60);
-        let seconds = timeLeft % 60;
         document.getElementById("timer").textContent =
-            String(minutes).padStart(2, "0") + ":" +
-            String(seconds).padStart(2, "0");
+            "00:" + String(timeLeft).padStart(2, "0");
         if (timeLeft <= 0) {
             clearInterval(timer);
             trash.forEach(function(item) {
