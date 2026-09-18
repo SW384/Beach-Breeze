@@ -80,6 +80,7 @@ function showPage(pageName) {
 let score = 0;
 let timer;
 let timeLeft = 45;
+let selectedTime = 45;
 document.getElementById("timer").style.display = "none";
 
 function randomizeTrash() {
@@ -118,7 +119,8 @@ document.getElementById("playAgainButton").addEventListener("click", function() 
 timeOptions.forEach(function(button) {
     button.addEventListener("click", function() {
         clearInterval(timer);
-        timeLeft = Number(button.dataset.time);
+        selectedTime = Number(button.dataset.time);
+        timeLeft = selectedTime;   
         document.getElementById("timer").style.display = "block";
         document.getElementById("timer").textContent =
             "00:" + String(timeLeft).padStart(2, "0");
@@ -143,9 +145,9 @@ document.getElementById("tryAgainButton").addEventListener("click", function() {
     document.getElementById("score").textContent = "0";
     document.getElementById("loseMessage").style.display = "none";
     randomizeTrash();
-    timeLeft = 45;
+    timeLeft = selectedTime;
     document.getElementById("timer").style.display = "block";
-    document.getElementById("timer").textContent = "00:45";
+    document.getElementById("timer").textContent = "00:" + String(timeLeft).padStart(2, "0");
     timer = setInterval(function() {
         timeLeft--;
         document.getElementById("timer").textContent =
@@ -158,4 +160,13 @@ document.getElementById("tryAgainButton").addEventListener("click", function() {
             document.getElementById("loseMessage").style.display = "block";
         }
     }, 1000);
+});
+
+document.getElementById("newTimeButton").addEventListener("click", function() {
+    clearInterval(timer);
+    document.getElementById("loseMessage").style.display = "none";
+    document.getElementById("timer").style.display = "none";
+    score = 0;
+    document.getElementById("score").textContent = "0";
+    randomizeTrash();
 });

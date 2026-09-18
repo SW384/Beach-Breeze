@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
+body {
+    cursor: url("jellyfish.png") 16 16, auto;
+}
+
 #home {
     display: block;
 }
@@ -148,8 +152,8 @@ li {
     font-size: 20px;
     color: white;
     text-shadow:
-        4px 0px 0px #00ffff,
-        -4px 0px 0px #ff2bd6,
+        4px 0 0 #00ffff,
+        -4px 0 0 #ff2bd6,
         0 0 5px #000000;
 }
 
@@ -158,36 +162,6 @@ li {
     background: transparent;
     border: none;
     font-size: 22px;
-    cursor: pointer;
-}
-
-#winMessage {
-    position: absolute;
-    top: 45%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: none;
-    text-align: center;
-    font-family: 'Press Start 2P', cursive;
-}
-
-#winMessage span {
-    display: block;
-    font-size: 36px;
-    color: white;
-    text-shadow:
-        6px 0px 0px #00ffff,
-        -6px 0px 0px #ff2bd6,
-        0 0 10px #000000;
-}
-
-#playAgainButton {
-    margin-top: 25px;
-    padding: 12px 20px;
-    font-family: 'Press Start 2P', cursive;
-    font-size: 12px;
-    background: #00ffff;
-    border: 3px solid white;
     cursor: pointer;
 }
 
@@ -232,6 +206,55 @@ li {
     color: #111111;
 }
 
+#timer {
+    display: none;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    margin: 0;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 16px;
+    color: white;
+    text-shadow:
+        3px 0 #00ffff,
+        -3px 0 #ff2bd6,
+        0 0 5px #000000;
+}
+
+#winMessage {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    text-align: center;
+    font-family: 'Press Start 2P', cursive;
+}
+
+#winMessage span {
+    display: block;
+    font-size: 36px;
+    color: white;
+    text-shadow:
+        6px 0 0 #00ffff,
+        -6px 0 0 #ff2bd6,
+        0 0 10px #000000;
+}
+
+#playAgainButton {
+    margin-top: 25px;
+    padding: 12px 20px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 12px;
+    background: #00ffff;
+    border: 3px solid white;
+    cursor: pointer;
+}
+
+#playAgainButton:hover {
+    background: white;
+}
+
 #loseMessage {
     position: absolute;
     top: 45%;
@@ -247,12 +270,12 @@ li {
     font-size: 36px;
     color: white;
     text-shadow:
-        6px 0px 0px #00ffff,
-        -6px 0px 0px #ff2bd6,
+        6px 0 0 #00ffff,
+        -6px 0 0 #ff2bd6,
         0 0 10px #000000;
 }
 
-#tryAgainButton {
+#loseMessage button {
     margin-top: 25px;
     padding: 12px 20px;
     font-family: 'Press Start 2P', cursive;
@@ -260,4 +283,12 @@ li {
     background: #00ffff;
     border: 3px solid white;
     cursor: pointer;
+}
+
+#loseMessage button + button {
+    margin-left: 10px;
+}
+
+#loseMessage button:hover {
+    background: white;
 }
