@@ -9,4 +9,4 @@ Beach Breeze is a website meant to help people plan the perfect beach day.
 - Custom jellyfish cursor
 
 ## AI Usage
-I used AI to help me figure out how sections in HTML work, and what to write for the JS to let me switch between the sections. I also used AI to help me figure out some basics for CSS, like how to make all buttons in a section be edited at once.
+I used AI to help me figure out how sections in HTML work, and what to write for the JS to let me switch between the sections. I also used AI to help me figure out some basics for CSS, like how to make all buttons in a section be edited at once, and to create the image I used for the custom cursor.
